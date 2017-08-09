@@ -1,11 +1,27 @@
 .book-element {
 	background-color: #e6fff5;
 	width:50%;
-	height:100px;
+	height:200px;
 }
 .book-title {
 	
 }
 .book-author {
 
+}
+
+html head {
+	background-color: #e6fff5;
+}
+.page{
+	background-color: #e6fff5;
+	height: 100%;
+	width: 100%;
+}
+.login-box {
+	background-color: #e6fff5;
+	width:50%;
+	height:250px;
+	margin-left: auto;
+	margin-right: auto;
 }
