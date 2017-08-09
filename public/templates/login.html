@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Login | SmartBookz</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional Bootstrap theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-</head>
-<body>
+<div class="page">
     <h1>SmartBookz</h1>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <form action="/action_page.php">
-      <div class="imgcontainer">
-        <!--img src="http://www.icone-png.com/png/40/39859.png" alt="Avatar" class="avatar"-->
-      </div>
-
-      <div class="container">
-      <div class = "row">
-        <div class="col-sm-4">
+    <div class = "row">
+    <form action="/action_page.php" class="login-box">
+        <div class="col-sm-8">
         <h3>Returning User Login</h3>
         <label><b>Email Address</b></label>
         <br>
@@ -32,15 +17,10 @@
         <br>
         <button type="submit" class="btn btn-primary">Login</button>
       </div>
-      </div>
-      </div>
     </form>
 
-    <form action="/action_page.php">
-
-      <div class="container">
-      <div class = "row">
-        <div class="col-sm-4">
+    <form action="/action_page.php" class="login-box">
+        <div class="col-sm-8">
         <h3>New User Registration</h3>
 
         <label><b>Name</b></label>
@@ -63,6 +43,6 @@
         <button type="submit" class="btn btn-primary">Create New Account</button>
       </div>
       </div>
-      </div>
     </form>
-</body>
+    </div>
+</div>
