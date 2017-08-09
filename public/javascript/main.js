@@ -1,4 +1,4 @@
-angular.module("myApp", ['ui.router'])
+angular.module("myApp", ['ui.router', 'ui.bootstrap'])
 	.config(function($stateProvider, $urlRouterProvider) {
 		// $urlRouterProvider.otherwise('/');
 		var marketplace = {
@@ -16,9 +16,7 @@ angular.module("myApp", ['ui.router'])
 		$stateProvider.state(profile);
 		$stateProvider.state(marketplace);
 	})
-	.controller('myCtrl', function ($scope, $state, $http) {
-
-
+	.controller('myCtrl', function ($scope, $state, $http , $uibModal) {
 		console.log('controller myCtrl is running...');
 		
 		$scope.getMarketplace = function () {
@@ -31,9 +29,9 @@ angular.module("myApp", ['ui.router'])
 			}).catch(function onError(errResponse) {
 				console.log(errResponse);
 				var book1 = {
-					title:'my title',
-					author:'my author', 
-					price:'50'
+					title:'my title 1',
+					author:'my author 1', 
+					price:'40'
 				};
 				var book2 = {
 					title:'my title',
@@ -59,10 +57,29 @@ angular.module("myApp", ['ui.router'])
 		};
 
 
+		$scope.openOfferModal = function () {
+			$uibModal.open({
+				templateUrl: 'template/modalOffer.html', 
+				controller: function ($scope, $uibModalInstance, bookId, initialPrice) {
+
+				}, 
+				resolve: {
+					bookId: function () {
+						return $scope.selectedId;
+					}, 
+					initialPrice: function () {
+						return $scope.initialPrice;
+					}
+				}
+			})
+		}
+
+
+
 
 		if (!$scope.state) {
 			console.log('ok switching to market');
-			$scope.state = 'market';
+			$scope.state = 'market'
 			$state.go('market');
 		}	
 

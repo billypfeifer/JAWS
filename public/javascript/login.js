@@ -1,15 +1,20 @@
 angular.module("loginApp", [])
 	.controller('loginCtrl', function ($scope, $http) {
-		$scope.loginUsername = "";
+		$scope.loginEmail = "";
 		$scope.loginPassword = "";
+		$scope.regPassword = "";
+		$scope.regPassword2 = "";
+		$scope.regEmail = "";
+		$scope.regName = "";
 
 		console.log('controller loginCtrl is running...');
 		
 		$scope.login = function () {
 			var obj = {
-				username: $scope.loginUsername, 
+				email: $scope.loginEmail, 
 				password: $scope.loginPassword
 			}
+			console.log('hey');
 			$http({
 				method: 'POST', 
 				url: 'login', 
@@ -25,7 +30,7 @@ angular.module("loginApp", [])
 
 		$scope.register = function () {
 			var obj = {
-				username: $scope.regUsername, 
+				email: $scope.regEmail, 
 				password: $scope.regPassword, 
 				name: $scope.regName
 			}
