@@ -7,12 +7,13 @@ var bodyParser = require('body-parser');
 var amazon = require('amazon-product-api');
 
 var index = require('./routes/index');
+var home = require('./routes/home')
 var users = require('./routes/users');
 var makeOffer = require('./routes/makeOffer');
 var acceptOffer = require('./routes/acceptOffer');
 var addBook = require('./routes/addBook');
 var deleteBook = require('./routes/deleteBook');
-var getmarketPlace = require('./routes/getmarketPlace');
+var getmarketPlace = require('./routes/getMarketPlace');
 var getmyAccount = require('./routes/getmyAccount');
 var register = require('./routes/register');
 var logOut = require('./routes/logOut');
@@ -43,12 +44,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/home', home);
 app.use('/users', users);
 app.use('/makeOffer', makeOffer);
 app.use('/acceptOffer', acceptOffer);
 app.use('/addBook', addBook);
 app.use('/deleteBook', deleteBook);
-app.use('/getmarketPlace', getmarketPlace);
+app.use('/getMarketPlace', getmarketPlace);
 app.use('/getmyAccount', getmyAccount);
 app.use('/register', register);
 app.use('/logOut', logOut);
