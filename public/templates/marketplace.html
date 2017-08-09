@@ -4,7 +4,7 @@
     <button type="button" class="btn btn-secondary account-button" ng-click="goToProfile()">My Account</button>
       
         <div class="book-element" ng-repeat="book in books">
-          <button type="button" class="btn btn-primary offer-button">Offer</button>
+          <button type="button" class="btn btn-primary offer-button" ng-click="openOfferModal(book.bookID, book.price)">Offer</button>
           <div class = "row">
 
             <div class="col-sm-4">

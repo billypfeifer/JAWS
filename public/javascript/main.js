@@ -31,12 +31,14 @@ angular.module("myApp", ['ui.router', 'ui.bootstrap'])
 				var book1 = {
 					title:'my title 1',
 					author:'my author 1', 
-					price:'40'
+					price:'40', 
+					bookID:6
 				};
 				var book2 = {
 					title:'my title',
 					author:'my author', 
-					price:'50'
+					price:'50', 
+					bookID: 5
 				};
 				$scope.books = [book1,book2];
 			});
@@ -46,8 +48,8 @@ angular.module("myApp", ['ui.router', 'ui.bootstrap'])
 		$scope.getMyAccount = function () {
 			$http({
 				method: 'GET', 
-				url: 'getMyAccount', 
-				data: JSON.stringify($scope.username?$scope.username:"")
+				url: 'getMyAccount'
+				// ,data: JSON.stringify($scope.username?$scope.username:"")
 			}).then(function onSuccess(response) {
 				if (response)
 					console.log(response);
@@ -57,14 +59,45 @@ angular.module("myApp", ['ui.router', 'ui.bootstrap'])
 		};
 
 
-		$scope.openOfferModal = function () {
-			$uibModal.open({
-				templateUrl: 'template/modalOffer.html', 
-				controller: function ($scope, $uibModalInstance, bookId, initialPrice) {
+		$scope.openOfferModal = function (bookId, price) {
+			$scope.bookId = bookId;
+			$scope.initialPrice = price;
+			var modalInstance = $uibModal.open({
+				templateUrl: '../templates/modal.html', 
+				windowClass: 'medium-modal-window',
+				controller: function ($scope, $uibModalInstance, $http, bookId, initialPrice) {
+					console.log('hey')
+					$scope.amount = initialPrice;
+					$scope.dimsiss = function () {
+						$uibModalInstance.dimsiss();
+					}
 
+					$scope.makeOffer = function () {
+						var obj = {
+							amount: $scope.amount, 
+							bookID:bookId 
+						};
+						$http({
+							method: 'POST',
+							url: 'makeOffer',
+							data: JSON.stringify(obj)
+						}).then(function onSuccess(response) {
+							if (response.error)
+								$scope.error;
+							else 
+								$scope.dimsiss();
+							$scope.dismiss();
+
+						}).catch(function onError(errResponse) {
+							$scope.error = errResponse;
+							$scope.dismiss();
+						});
+					};
 				}, 
+				scope: $scope,
 				resolve: {
 					bookId: function () {
+						console.log('hi');
 						return $scope.selectedId;
 					}, 
 					initialPrice: function () {
