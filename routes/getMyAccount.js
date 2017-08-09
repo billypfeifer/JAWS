@@ -1,14 +1,23 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser')
-var models = require('../models/marketplaceModel')
+var models = require('../models/userModel')
 
-router.post('/getmyAccount', function(req, res, next) {
-	models.find({ username: '' }, function(err, myaccount) {
+
+router.use( bodyParser.json());
+
+var accountinfoJSON;
+router.get('/', function(req, res, next) {
+	models.find({ 'name': 'lex' }, function(err, myaccount) {
  	  if (err) throw err;
+
 	  // object of the user
+
+	  accountinfoJSON=myaccount;
+	  res.send(accountinfoJSON[0].booksSold);
 	  console.log(myaccount);
 	});
+
 });
 
 module.exports = router;

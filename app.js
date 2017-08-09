@@ -12,8 +12,8 @@ var makeOffer = require('./routes/makeOffer');
 var acceptOffer = require('./routes/acceptOffer');
 var addBook = require('./routes/addBook');
 var deleteBook = require('./routes/deleteBook');
-var getmarketPlace = require('./routes/getmarketPlace');
-var getmyAccount = require('./routes/getmyAccount');
+var getMarketPlace = require('./routes/getMarketPlace');
+var getMyAccount = require('./routes/getMyAccount');
 var register = require('./routes/register');
 var logOut = require('./routes/logOut');
 
@@ -48,8 +48,8 @@ app.use('/makeOffer', makeOffer);
 app.use('/acceptOffer', acceptOffer);
 app.use('/addBook', addBook);
 app.use('/deleteBook', deleteBook);
-app.use('/getmarketPlace', getmarketPlace);
-app.use('/getmyAccount', getmyAccount);
+app.use('/getMarketPlace', getMarketPlace);
+app.use('/getMyAccount', getMyAccount);
 app.use('/register', register);
 app.use('/logOut', logOut);
 
