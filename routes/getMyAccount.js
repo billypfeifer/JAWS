@@ -6,3 +6,12 @@ router.post('/getMyAccount', function(req, res, next) {
 });
 
 module.exports = router;
+var bodyParser = require('body-parser')
+var models = require('./models.marketplaceModel')
+
+router.post('/getmyAccount', function(req, res, next) {
+
+
+});
+
+module.exports = router;
