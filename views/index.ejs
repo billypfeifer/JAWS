@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<html ng-app="myApp">
+<head>
+    <!--  meta tags from bootstrap documentation  -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>University Book Marketplace Home</title>
+    
+    <script src="javascript/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <script src="javascript/main.js"></script>
+</head>
+
+
+<body ng-controller="myCtrl"> 
+
+<div class="center-block">
+
+	<ui-view>
+		<p> Oh no... we couldnt find your page </p>
+	</ui-view>
+</div>
+
+</body>
+
+
+
 </html>
+
+
