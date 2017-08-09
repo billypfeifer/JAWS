@@ -16,22 +16,9 @@ var User = mongoose.model('User', userSchema);
 
 var lex = new User();
 console.log(lex);
+lex.email = 'alexis@email.com';
+lex.password = 'pass';
 lex.save();
-
-User.findOne({ 'name' :'lexs' }, function(err, user) {
-  console.log(err);
-  console.log(user);
-  console.log('here')
-  if (!user) {
-
-
-    lex.name = 'lexs';
-
-    lex.save(function(err, updatedOG) {
-				if (err) { console.log(err); }
-			});
-  }
-});
 
 
 //export

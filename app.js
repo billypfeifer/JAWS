@@ -5,8 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var amazon = require('amazon-product-api');
+var session = require('express-session');
 
 var index = require('./routes/index');
+var logIn = require('./routes/logIn');
 var home = require('./routes/home')
 var users = require('./routes/users');
 var makeOffer = require('./routes/makeOffer');
@@ -17,6 +19,7 @@ var getmarketPlace = require('./routes/getMarketPlace');
 var getmyAccount = require('./routes/getmyAccount');
 var register = require('./routes/register');
 var logOut = require('./routes/logOut');
+var googleBookSearch = require('./routes/googleBookSearch');
 
 
 
@@ -41,6 +44,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
@@ -51,9 +55,11 @@ app.use('/acceptOffer', acceptOffer);
 app.use('/addBook', addBook);
 app.use('/deleteBook', deleteBook);
 app.use('/getMarketPlace', getmarketPlace);
+app.use('/googleBookSearch', googleBookSearch)
 app.use('/getmyAccount', getmyAccount);
 app.use('/register', register);
 app.use('/logOut', logOut);
+app.use('/logIn', logIn);
 
 
 /*var client = amazon.createClient({
