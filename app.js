@@ -26,7 +26,6 @@ var User = require('./models/userModel');
 var app = express();
 
 
-
 mongoose.connect('mongodb://alexis:JawsTeam1@ds161225.mlab.com:61225/bookmarketplace', {
   useMongoClient: true
 });
