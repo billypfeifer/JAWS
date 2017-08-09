@@ -4,11 +4,24 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var amazon = require('amazon-product-api');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var makeOffer = require('./routes/makeOffer');
+var acceptOffer = require('./routes/acceptOffer');
+var addBook = require('./routes/addBook');
+var deleteBook = require('./routes/deleteBook');
+var getmarketPlace = require('./routes/getmarketPlace');
+var getmyAccount = require('./routes/getmyAccount');
+var register = require('./routes/register');
+var logOut = require('./routes/logOut');
+
+
+
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +37,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/makeOffer', makeOffer);
+app.use('/acceptOffer', acceptOffer);
+app.use('/addBook', addBook);
+app.use('/deleteBook', deleteBook);
+app.use('/getmarketPlace', getmarketPlace);
+app.use('/getmyAccount', getmyAccount);
+app.use('/register', register);
+app.use('/logOut', logOut);
+
+
+/*var client = amazon.createClient({
+  awsId: "aws ID",
+  awsSecret: "aws Secret",
+  awsTag: "aws Tag"
+});
+
+client.itemSearch({
+  director: 'Quentin Tarantino'
+}).then(function(results){
+  console.log(results);
+}).catch(function(err){
+  console.log(err);
+});*/
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
