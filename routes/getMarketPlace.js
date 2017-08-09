@@ -3,8 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser')
 var models = require('../models/userModel')
 
-
-router.use( bodyParser.json());
+router.use( bodyParser.json() );
 
 router.get('/', function(req, res, next) {
  
@@ -12,8 +11,8 @@ router.get('/', function(req, res, next) {
 	  if (err) throw err;
 
 	  // object of all the users
-	  res.send(books);
-	  console.log(books);
+    console.log(books);
+	  res.send("HELLO");
 	});
 });
 
