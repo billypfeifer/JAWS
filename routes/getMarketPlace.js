@@ -1,7 +1,14 @@
 var express = require('express');
 var router = express.Router();
+
+router.post('/getMarketPlace', function(req, res, next) {
+ // res.render('index', { title: 'Express' });
+});
+
+module.exports = router;
+
 var bodyParser = require('body-parser')
-var models = require('./models.marketplaceModel')
+var models = require('../models/marketplaceModel')
 router.use( bodyParser.json() );
 
 router.get('/getmarketPlace', function(req, res, next) {
