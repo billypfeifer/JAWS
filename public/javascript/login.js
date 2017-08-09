@@ -1,5 +1,5 @@
 angular.module("loginApp", [])
-	.controller('loginCtrl', function ($scope, $state, $http) {
+	.controller('loginCtrl', function ($scope, $http) {
 		$scope.loginUsername = "";
 		$scope.loginPassword = "";
 
@@ -41,5 +41,5 @@ angular.module("loginApp", [])
 					$scope.errorMsg = errResponse.data;
 			});
 		};
-		
+
 	});
