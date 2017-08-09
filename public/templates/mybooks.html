@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My Books | SmartBookz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional Bootstrap theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script>
+    	var inputData = function() {
+    		var el = document.getElementById("textInp");
+    		console.log(el.value);
+    	}
+    </script>
+</head>
+<body>
+    <h1>Shadi's Books</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <div class="container">
+      <div class = "row">
+        <div class="col-sm-2">
+            <div class="imgcontainer">
+            <img src="http://www.i2clipart.com/cliparts/0/3/7/f/128135037f6552b5240d4a4fed8520947a4b01.png" alt="Avatar" class="avatar">
+            </div>
+        </div>
+        <div class="col-sm-4">
+        <h3>Book Title</h3>
+        <p><b>Book Author</b></p>
+        <p>More Book Info...</p>
+        <p>Asking Price: <b>$5</b></p>
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Remove Listing</button>
+
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+              <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <p>Some text. Some text. Some text.</p>
+                <p>Some text. Some text. Some text.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
