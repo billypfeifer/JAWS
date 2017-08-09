@@ -4,12 +4,14 @@ angular.module("myApp", ['ui.router'])
 		var marketplace = {
 			name: 'market', 
 			url: '/',
-			templateUrl: '../templates/marketplace.html'
+			templateUrl: '../templates/marketplace.html', 
+			controller: 'marketplaceLoadCtrl'
 		};
 		var profile = {
 			name: 'profile', 
 			url: 'profile', 
-			templateUrl: '../templates/profile.html'
+			templateUrl: '../templates/mybooks.html', 
+			controller: 'profileLoadCtrl'
 		}
 		$stateProvider.state(profile);
 		$stateProvider.state(marketplace);
@@ -19,7 +21,7 @@ angular.module("myApp", ['ui.router'])
 
 		console.log('controller myCtrl is running...');
 		
-		$scope.loadBooks = function () {
+		$scope.getMarketplace = function () {
 			$http({
 				method: 'GET', 
 				url: 'getMarketplace'
@@ -28,6 +30,17 @@ angular.module("myApp", ['ui.router'])
 					console.log(response);
 			}).catch(function onError(errResponse) {
 				console.log(errResponse);
+				var book1 = {
+					title:'my title',
+					author:'my author', 
+					price:'50'
+				};
+				var book2 = {
+					title:'my title',
+					author:'my author', 
+					price:'50'
+				};
+				$scope.books = [book1,book2];
 			});
 		};
 
@@ -59,5 +72,13 @@ angular.module("myApp", ['ui.router'])
 		$scope.goHome = function () {
 			$state.go('market');
 		}
+	})
+	.controller('marketplaceLoadCtrl', function ($scope, $http) {
+		console.log('get marketplace');
+		$scope.getMarketplace();
+	})
+	.controller('profileLoadCtrl', function ($scope, $http) {
+		console.log('get profile');
+		$scope.getMyAccount();
 	})
 	
