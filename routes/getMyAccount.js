@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var bodyParser = require('body-parser')
+var models = require('./models.marketplaceModel')
 
-router.post('/getMyAccount', function(req, res, next) {
+router.post('/getmyAccount', function(req, res, next) {
  // res.render('index', { title: 'Express' });
 });
 
