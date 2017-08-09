@@ -1,17 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser')
-var models = require('../models/marketplaceModel')
+var models = require('../models/userModel')
 
 router.use( bodyParser.json() );
 
-router.post('/getMarketPlace', function(req, res, next) {
- // res.render('index', { title: 'Express' });
-});
-
-
 router.get('/', function(req, res, next) {
-
+ 
 	models.find({}, function(err, books) {
 	  if (err) throw err;
 

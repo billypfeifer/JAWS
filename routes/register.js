@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/userModel');
 
+
 router.get('/', function(req, res, next) {
   var emailG = req.body.email;
   var passwordG = req.body.password;
@@ -22,6 +23,6 @@ router.get('/', function(req, res, next) {
       res.redirect('/home')
     }
   });
-});
+
 
 module.exports = router;
