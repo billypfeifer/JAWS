@@ -10,7 +10,6 @@ var session = require('express-session');
 var index = require('./routes/index');
 var logIn = require('./routes/logIn');
 var home = require('./routes/home')
-var users = require('./routes/users');
 var makeOffer = require('./routes/makeOffer');
 var acceptOffer = require('./routes/acceptOffer');
 var addBook = require('./routes/addBook');
@@ -44,37 +43,21 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session());
+app.use(session({secret: "Shh, its a secret!"}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/home', home);
-app.use('/users', users);
 app.use('/makeOffer', makeOffer);
 app.use('/acceptOffer', acceptOffer);
 app.use('/addBook', addBook);
 app.use('/deleteBook', deleteBook);
-app.use('/getMarketPlace', getmarketPlace);
+app.use('/getMarketPlace', getMarketPlace);
 app.use('/googleBookSearch', googleBookSearch)
-app.use('/getmyAccount', getmyAccount);
+app.use('/getMyAccount', getMyAccount);
 app.use('/register', register);
-app.use('/logOut', logOut);
-app.use('/logIn', logIn);
-
-
-/*var client = amazon.createClient({
-  awsId: "aws ID",
-  awsSecret: "aws Secret",
-  awsTag: "aws Tag"
-});
-
-client.itemSearch({
-  director: 'Quentin Tarantino'
-}).then(function(results){
-  console.log(results);
-}).catch(function(err){
-  console.log(err);
-});*/
+app.use('/logout', logOut);
+app.use('/login', logIn);
 
 
 // catch 404 and forward to error handler

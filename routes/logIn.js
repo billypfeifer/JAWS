@@ -6,7 +6,7 @@ var User = require('../models/userModel');
 
 router.use(bodyParser.json());
 
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
   var emailG = req.body.email;
   var passwordG = req.body.password;
 
@@ -25,8 +25,6 @@ router.get('/', function(req, res, next) {
       res.send({error: 'Email not correct.'});
     }
   });
-
- // res.render('index', { title: 'Express' });
 });
 
 

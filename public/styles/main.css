@@ -1,0 +1,57 @@
+.book-element {
+	background-color: #B3FFDC;
+	width:50%;
+	height:200px;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.book-title {
+	
+}
+.book-author {
+
+}
+
+.offer-button{
+	position: relative;
+	top: 80%;
+	left: 85%;
+	margin-top: 10px;
+}
+
+.account-button{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.logout-button{
+               position: absolute;
+               top: 10px;
+               left: 10px;
+}
+html head {
+	background-color: #5DFEB4;
+}
+.page{
+	background-color: #5DFEB4;
+	height: 100%;
+	width: 100%;
+}
+.login-box {
+	background-color: #B3FFDC;
+	width:50%;
+	height:250px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profile-heading {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.info-box {
+	width: 400px;
+}

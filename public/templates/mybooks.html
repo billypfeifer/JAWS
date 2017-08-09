@@ -1,0 +1,46 @@
+<div class="page" >
+   <h1 align="center">Profile</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <button type="button" class="btn btn-danger logout-button" ng-click="logout()">Logout</button>
+    <button type="button" class="btn btn-secondary account-button" ng-click="goToProfile()">My Account</button>
+    <h2 align="center">My Books For Sale    <button type="button" class="btn btn-primary" ng-click="openAddBookModal()">Add Book</button></h2>
+        <div class="book-element" ng-repeat="book in books">
+          <button type="button" class="btn btn-danger offer-button">Remove</button>
+          <div class = "row">
+
+            <div class="col-sm-4">
+                <div class="imgcontainer">
+                <img src="book.image" alt="Avatar" class="avatar">
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+              <h3>Title: {{book.title}}</h3>
+              <p><b>Author: {{book.author}}</b></p>
+              <p>More Book Info...</p>
+              <p>Asking Price: <b>${{book.price}}</b></p>
+            </div>
+          </div>
+        </div>
+
+        <h2 align="center">Books I've Placed Offers On</h2>
+        <div class="book-element" ng-repeat="book in books">
+          <button type="button" class="btn btn-danger offer-button">Remove</button>
+          <div class = "row">
+
+            <div class="col-sm-4">
+                <div class="imgcontainer">
+                <img src="book.image" alt="Avatar" class="avatar">
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+              <h3>Title: {{book.title}}</h3>
+              <p><b>Author: {{book.author}}</b></p>
+              <p>More Book Info...</p>
+              <p>Asking Price: <b>${{book.price}}</b></p>
+            </div>
+          </div>
+        </div>
+</div>

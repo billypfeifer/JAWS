@@ -1,0 +1,48 @@
+<div class="page">
+    <h1>SmartBookz</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <div class = "row">
+    <form onSubmit="login()" class="login-box">
+        <div class="col-sm-8">
+        <h3>Returning User Login</h3>
+        <label><b>Email Address</b></label>
+        <br>
+        <input value="loginEmail" type="text" placeholder="Email Address" name="email" required>
+        <br>
+        <label><b>Password</b></label>
+        <br>
+        <input value="loginPassword" type="password" placeholder="Password" name="psw" required>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+
+    <form onSubmit="register()" class="login-box">
+        <div class="col-sm-8">
+        <h3>New User Registration</h3>
+
+        <label><b>Name</b></label>
+        <br>
+        <input value="regName" type="text" placeholder="Name" name="name" required>
+        <br>
+        <label><b>Email Address</b></label>
+        <br>
+        <input value="regEmail" type="text" placeholder="Email Address" name="email" required>
+        <br>
+        <label><b>Password</b></label>
+        <br>
+        <input value="regPassword" type="password" placeholder="Password" name="psw" required>
+        <br>
+        <label><b>Confirm Password</b></label>
+        <br>
+        <input value="regPassword2" type="password" placeholder="Confirm Password" name="cpsw" required>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary" ng-disable="regPassword != regPassword2 && regPassword.length < 4">Create New Account</button>
+      </div>
+      </div>
+    </form>
+    </div>
+</div>

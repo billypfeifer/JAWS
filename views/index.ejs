@@ -1,11 +1,81 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<html ng-app="loginApp">
+<head>
+    <!--  meta tags from bootstrap documentation  -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>University Book Marketplace Home</title>
+    
+    <script src="javascript/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <script src="javascript/login.js"></script>
+</head>
+
+
+<body ng-controller="loginCtrl"> 
+
+<div class="center-block">
+
+    <div class="page">
+    <h1>SmartBookz</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <div class = "row">
+    <form class="login-box">
+        <div class="col-sm-8">
+        <h3>Returning User Login</h3>
+        <label><b>Email Address</b></label>
+        <br>
+        <input ng-model="loginEmail" type="text" placeholder="Email Address" name="email" required>
+        <br>
+        <label><b>Password</b></label>
+        <br>
+        <input ng-model="loginPassword" type="password" placeholder="Password" name="psw" required>
+        <br>
+        <br>
+        <button ng-click="login()" type="submit" class="btn btn-primary" ng-diabled="loginEmail.length == 0 || loginPassword.length == 0">Login</button>
+      </div>
+     {{loginEmail.length == 0 }}
+    </form>
+
+    <form class="login-box">
+        <div class="col-sm-8">
+        <h3>New User Registration</h3>
+
+        <label><b>Name</b></label>
+        <br>
+        <input ng-model="regName" type="text" placeholder="Name" name="name" required>
+        <br>
+        <label><b>Email Address</b></label>
+        <br>
+        <input ng-model="regEmail" type="text" placeholder="Email Address" name="email" required>
+        <br>
+        <label><b>Password</b></label>
+        <br>
+        <input ng-model="regPassword" type="password" placeholder="Password" name="psw" required>
+        <br>
+        <label><b>Confirm Password</b></label>
+        <br>
+        <input ng-model="regPassword2" type="password" placeholder="Confirm Password" name="cpsw" required>
+        <br>
+        <br>
+        <button ng-click="register()" class="btn btn-primary"  ng-disabled="regPassword != regPassword2 || regPassword.length < 4 || regName.length == 0 || regEmail.length == 0">Create New Account</button>
+        
+      </div>
+      </div>
+    </form>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+
 </html>
+
+

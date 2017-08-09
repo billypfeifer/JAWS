@@ -7,15 +7,16 @@ var books = require('google-books-search');
 router.use(bodyParser.json());
 
 router.get('/', function(req, res, next) {
+  if (req.session.user === null) { res.redirect('../')}
   var query = req.body.bookQuery;
   books.search('Hamlet', function(error, results) {
-    if ( ! error ) {
+    if (!error) {
+
+      console.log(results);
       res.send(results)
       } else {
       }
   });
-
- // res.render('index', { title: 'Express' });
 });
 
 

@@ -14,14 +14,19 @@ var userSchema = new Schema({
 //user model
 var User = mongoose.model('User', userSchema);
 
-var lex = new User({
-  name:'lex',
-  booksSold:['1','2','3']
-});
-console.log(lex);
-lex.email = 'alexis@email.com';
-lex.password = 'pass';
-lex.save();
+
+var alexis = new User(
+  {
+    email: 'emailA',
+    name: 'Alexis',
+    password: 'pass',
+    booksOnSale: ['1', '2'],
+    booksSold: ['3', '4'],
+    offersMade: [{book: '3', offerAmount: 10, satus: 'pending'}]
+  }
+)
+
+alexis.save();
 
 
 //export
