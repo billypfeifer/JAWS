@@ -8,7 +8,17 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+var mongoose = require('mongoose');
+var User = require('./models/userModel');
+
 var app = express();
+
+
+mongoose.connect('mongodb://alexis:JawsTeam1@ds161225.mlab.com:61225/bookmarketplace', {
+  useMongoClient: true
+});
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
