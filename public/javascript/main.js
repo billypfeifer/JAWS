@@ -4,7 +4,7 @@ angular.module("myApp", ['ui.router'])
 		var marketplace = {
 			name: 'market', 
 			url: '/',
-			templateUrl: '../templates/marketplace.html'
+			templateUrl: '../templates/Home.html'
 		};
 		var profile = {
 			name: 'profile', 
