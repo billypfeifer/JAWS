@@ -26,15 +26,11 @@ var User = require('./models/userModel');
 var app = express();
 
 
-<<<<<<< HEAD
+
 mongoose.connect('mongodb://alexis:JawsTeam1@ds161225.mlab.com:61225/bookmarketplace', {
   useMongoClient: true
 });
 
-
-
-=======
->>>>>>> 1d85036bf054427dac8dda9c396e9b1505da5cad
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
