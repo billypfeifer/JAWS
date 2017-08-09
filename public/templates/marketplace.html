@@ -3,6 +3,10 @@
     <button type="button" class="btn btn-danger logout-button" ng-click="logout()">Logout</button>
     <button type="button" class="btn btn-secondary account-button" ng-click="goToProfile()">My Account</button>
       
+
+  <input ng-model="marketSearchTerm" class="info-box" type="text" placeholder="Search by title,author,etc."></input>
+  <button type="button" class="btn btn-primary" ng-click="bookSearch(marketSeachTerm)">Search</button>
+
         <div class="book-element" ng-repeat="book in books">
           <button type="button" class="btn btn-primary offer-button" ng-click="openOfferModal(book.bookID, book.price)">Offer</button>
           <div class = "row">
@@ -21,25 +25,11 @@
               <p>Asking Price: <b>${{book.price}}</b></p>
             </div>
           </div>
+          <div class="offer-element" ng-repeat="offer in book.offers">
+            <h4>Offer: ${{offer.offerAmount}}       <button type="button" class="btn btn-primary">Accept</button></h4>
+        </div>
         </div>
 
-      <div class="book-element">
-        <button type="button" class="btn btn-primary offer-button">Offer</button>
-        <div class = "row">
-
-          <div class="col-sm-4">
-              <div class="imgcontainer">
-                <img src="http://www.i2clipart.com/cliparts/0/3/7/f/128135037f6552b5240d4a4fed8520947a4b01.png" alt="Avatar" class="avatar">
-              </div>
-          </div>
-          <div class="col-sm-4">
-          
-            <h3>Book Title</h3>
-            <p><b>Book Author</b></p>
-            <p>More Book Info...</p>
-            <p>Asking Price: <b>$5</b></p>
-          </div>
-        </div>
-      </div>
+    
 
 </div>

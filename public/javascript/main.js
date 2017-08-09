@@ -27,8 +27,8 @@ angular.module("myApp", ['ui.router', 'ui.bootstrap'])
 				method: 'GET', 
 				url: 'getMarketplace'
 			}).then(function onSuccess(response) {
-				if (response)
-					console.log(response);
+				if (!response.error)
+					$scope.books = response.data;
 			}).catch(function onError(errResponse) {
 				console.log(errResponse);
 				var book1 = {
@@ -55,7 +55,7 @@ angular.module("myApp", ['ui.router', 'ui.bootstrap'])
 				// ,data: JSON.stringify($scope.username?$scope.username:"")
 			}).then(function onSuccess(response) {
 				if (response)
-					console.log(response);
+					$scope.books = response.data;
 			}).catch(function onError(errResponse) {
 				console.log(errResponse);
 			});

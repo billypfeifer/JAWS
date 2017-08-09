@@ -5,6 +5,7 @@
     <button type="button" class="btn btn-danger logout-button" ng-click="logout()">Logout</button>
     <button type="button" class="btn btn-secondary account-button" ng-click="goToProfile()">My Account</button>
     <h2 align="center">My Books For Sale    <button type="button" class="btn btn-primary" ng-click="openAddBookModal()">Add Book</button></h2>
+        
         <div class="book-element" ng-repeat="book in books">
           <button type="button" class="btn btn-danger offer-button">Remove</button>
           <div class = "row">
@@ -24,23 +25,5 @@
           </div>
         </div>
 
-        <h2 align="center">Books I've Placed Offers On</h2>
-        <div class="book-element" ng-repeat="book in books">
-          <button type="button" class="btn btn-danger offer-button">Remove</button>
-          <div class = "row">
-
-            <div class="col-sm-4">
-                <div class="imgcontainer">
-                <img src="book.image" alt="Avatar" class="avatar">
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-              <h3>Title: {{book.title}}</h3>
-              <p><b>Author: {{book.author}}</b></p>
-              <p>More Book Info...</p>
-              <p>Asking Price: <b>${{book.price}}</b></p>
-            </div>
-          </div>
-        </div>
+        
 </div>
